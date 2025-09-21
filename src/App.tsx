@@ -1,18 +1,22 @@
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Projects from './components/Projects';
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Projects from "./components/Projects";
+import Background from "./components/Background";
 
 function App() {
-
   return (
-    <div className="bg-white dark:bg-gray-900 min-h-screen text-black dark:text-white transition-colors duration-300">
-        <Navbar/>
-        <Hero/>
-        <Projects/>
+    <div className="relative min-h-screen overflow-x-hidden">
+      {/* Fondo global fijo */}
+      <Background />
 
+      {/* Contenido */}
+      <Navbar />
+      <Hero />
+      <Projects />
+      {/* otras secciones */}
     </div>
-    
-  )
+
+  );
 }
 
-export default App
+export default App;
