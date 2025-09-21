@@ -22,7 +22,7 @@ const ThemeToggle = () => {
       </button>
 
       {open && (
-  <div className="absolute top-full mt-1 left-1/2 -translate-x-1/2 w-40 max-w-full rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 z-50">
+  <div className="absolute top-full mt-1 left-1/2 -translate-x-1/2 w-11/12 max-w-xs md:w-48 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 z-50">
     <div className="py-1">
       {themes.map((t) => (
         <button
@@ -31,7 +31,7 @@ const ThemeToggle = () => {
             setTheme(t.id as "light" | "dark" | "system");
             setOpen(false);
           }}
-          className="w-full text-left px-3 py-2 text-sm text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300"
+          className="w-full text-left px-4 py-2 text-sm text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300"
         >
           {t.label}
         </button>

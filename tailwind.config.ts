@@ -4,7 +4,11 @@ const config: Config = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   darkMode: "class", // 👈 importante para toggle
   theme: {
-    extend: {},
+    extend: {
+        fontFamily: {
+            mono: ['Fira Mono', 'monospace'],
+        }
+    },
   },
   plugins: [],
 };
