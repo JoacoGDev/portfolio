@@ -1,16 +1,23 @@
 interface PhotoProps {
   img: string;
-  className?: string; // corrección: className con N mayúscula
+  className?: string;
 }
 
 const Photo = ({ img, className }: PhotoProps) => {
   return (
-    <div className="mt-8">
+    <div className="relative">
       <img
         src={img}
-        alt="Avatar de Joaquín"
-        className={`w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-2xl mx-auto md:mx-0 object-cover shadow-lg ${className || ""}`}
+        alt="Avatar de Joaquín Gil - Desarrollador Full-Stack"
+        className={`
+          object-cover transition-all duration-500 hover:scale-105
+          ${className || "w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-3xl shadow-xl shadow-gray-900/20 dark:shadow-black/40 border-2 border-white/50 dark:border-gray-800/50"}
+        `}
+        loading="lazy"
       />
+      
+      {/* Glassmorphism overlay on hover */}
+      <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-3xl"></div>
     </div>
   );
 };

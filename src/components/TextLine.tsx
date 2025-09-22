@@ -6,8 +6,8 @@ interface TextLineProps {
 const TextLine = ({ text, className }: TextLineProps) => {
   return (
     <p
-      className={`text-lg sm:text-xl md:text-2xl mb-6 text-gray-700 dark:text-gray-300 max-w-xl ${
-        className || ""
+      className={`font-light leading-relaxed ${
+        className || "text-lg sm:text-xl lg:text-2xl text-gray-600 dark:text-gray-400 max-w-2xl"
       }`}
     >
       {text}
