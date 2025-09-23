@@ -1,11 +1,17 @@
 const About = () => {
   const skills = [
-    { name: "React", level: 95, color: "from-blue-500 to-cyan-500" },
-    { name: "TypeScript", level: 90, color: "from-blue-600 to-indigo-600" },
-    { name: "Node.js", level: 88, color: "from-green-500 to-emerald-500" },
-    { name: "PostgreSQL", level: 85, color: "from-indigo-500 to-purple-500" },
-    { name: "Next.js", level: 92, color: "from-gray-700 to-gray-900 dark:from-gray-400 dark:to-gray-200" },
-    { name: "Tailwind CSS", level: 96, color: "from-cyan-500 to-teal-500" }
+    { name: "React", color: "from-blue-500 to-cyan-500" },
+    { name: "TypeScript", color: "from-blue-600 to-indigo-600" },
+    { name: "Node.js", color: "from-green-500 to-emerald-500" },
+    { name: "PostgreSQL", color: "from-indigo-500 to-purple-500" },
+    { name: "Next.js", color: "from-gray-700 to-gray-900" },
+    { name: "Tailwind CSS", color: "from-cyan-500 to-teal-500" },
+    { name: "JavaScript", color: "from-yellow-500 to-orange-500" },
+    { name: "Python", color: "from-blue-600 to-blue-800" },
+    { name: "MongoDB", color: "from-green-600 to-green-800" },
+    { name: "Express", color: "from-gray-600 to-gray-800" },
+    { name: "Git", color: "from-orange-500 to-red-500" },
+    { name: "Docker", color: "from-blue-400 to-blue-600" }
   ];
 
   const stats = [
@@ -121,26 +127,84 @@ const About = () => {
                 </div>
 
                 <div className="space-y-6">
-                  {skills.map((skill, index) => (
-                    <div 
-                      key={skill.name} 
-                      className="space-y-2"
-                      style={{ animationDelay: `${index * 150}ms` }}
-                    >
-                      <div className="flex justify-between items-center">
-                        <span className="font-medium font-mono text-gray-700 dark:text-gray-300">{skill.name}</span>
-                        <span className="text-sm text-gray-500 dark:text-gray-400 font-mono">{skill.level}%</span>
-                      </div>
-                      <div className="h-2 bg-gray-200/50 dark:bg-gray-700/50 rounded-full overflow-hidden">
-                        <div 
-                          className={`h-full bg-gradient-to-r ${skill.color} rounded-full transition-all duration-1000 ease-out relative`}
-                          style={{ width: `${skill.level}%` }}
-                        >
-                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 animate-pulse"></div>
-                        </div>
+                  <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-widest font-mono">
+                    Stack Tecnológico
+                  </h4>
+                  
+                  <div className="flex flex-wrap gap-3">
+                    {skills.map((skill, index) => (
+                      <span 
+                        key={skill.name}
+                        className={`group/skill relative px-4 py-3 text-sm font-mono font-medium rounded-xl shadow-lg bg-gradient-to-r ${skill.color} text-white hover:scale-105 hover:shadow-xl transition-all duration-300 cursor-default overflow-hidden`}
+                        style={{ animationDelay: `${index * 100}ms` }}
+                      >
+                        {/* Shine effect */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12 -translate-x-full group-hover/skill:translate-x-full transition-transform duration-700 ease-out"></div>
+                        
+                        {/* Content */}
+                        <span className="relative z-10">{skill.name}</span>
+                      </span>
+                    ))}
+                  </div>
+                  
+                  {/* Additional tech categories */}
+                  <div className="grid sm:grid-cols-2 gap-6 mt-8">
+                    <div className="space-y-3">
+                      <h5 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider font-mono flex items-center gap-2">
+                        <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+                        Frontend
+                      </h5>
+                      <div className="flex flex-wrap gap-2">
+                        {["HTML5", "CSS3", "SASS", "Responsive Design"].map((tech) => (
+                          <span key={tech} className="px-3 py-1.5 text-xs font-mono bg-blue-100/80 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-lg border border-blue-200/50 dark:border-blue-700/50">
+                            {tech}
+                          </span>
+                        ))}
                       </div>
                     </div>
-                  ))}
+                    
+                    <div className="space-y-3">
+                      <h5 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider font-mono flex items-center gap-2">
+                        <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                        Backend
+                      </h5>
+                      <div className="flex flex-wrap gap-2">
+                        {["REST APIs", "GraphQL", "JWT", "OAuth"].map((tech) => (
+                          <span key={tech} className="px-3 py-1.5 text-xs font-mono bg-green-100/80 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-lg border border-green-200/50 dark:border-green-700/50">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-3">
+                      <h5 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider font-mono flex items-center gap-2">
+                        <span className="w-2 h-2 bg-purple-500 rounded-full"></span>
+                        Base de Datos
+                      </h5>
+                      <div className="flex flex-wrap gap-2">
+                        {["SQL", "NoSQL", "Redis", "Prisma"].map((tech) => (
+                          <span key={tech} className="px-3 py-1.5 text-xs font-mono bg-purple-100/80 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-lg border border-purple-200/50 dark:border-purple-700/50">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-3">
+                      <h5 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider font-mono flex items-center gap-2">
+                        <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
+                        DevOps & Tools
+                      </h5>
+                      <div className="flex flex-wrap gap-2">
+                        {["AWS", "Vercel", "GitHub Actions", "Postman"].map((tech) => (
+                          <span key={tech} className="px-3 py-1.5 text-xs font-mono bg-orange-100/80 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 rounded-lg border border-orange-200/50 dark:border-orange-700/50">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

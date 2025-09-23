@@ -1,4 +1,9 @@
+import emailjs from '@emailjs/browser';
+import { FaLinkedin, FaGithub, FaWhatsapp, FaEnvelope  } from "react-icons/fa";
+
+
 import { useState } from 'react';
+
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -13,34 +18,34 @@ const Contact = () => {
 
   const contactMethods = [
     {
-      icon: "📧",
+      icon: FaEnvelope,
       title: "Email",
-      value: "joaquin.gil@email.com",
-      href: "mailto:joaquin.gil@email.com",
+      value: "joacogilp@gmail.com",
+      href: "mailto:joacogilp@gmail.com",
       description: "Respondo en 24 horas",
       color: "from-blue-500 to-indigo-500"
     },
     {
-      icon: "💼",
+      icon: FaLinkedin,
       title: "LinkedIn",
-      value: "/in/joaquin-gil",
-      href: "https://linkedin.com/in/joaquin-gil",
+      value: "/in/joaquingilp",
+      href: "https://www.linkedin.com/in/joaquingilp/",
       description: "Conecta conmigo",
       color: "from-indigo-500 to-purple-500"
     },
     {
-      icon: "🐙",
+      icon: FaGithub,
       title: "GitHub",
-      value: "/joaquin-gil",
-      href: "https://github.com/joaquin-gil",
+      value: "JoacoGDev",
+      href: "https://github.com/JoacoGDev",
       description: "Ve mi código",
       color: "from-gray-700 to-gray-900 dark:from-gray-400 dark:to-gray-200"
     },
     {
-      icon: "📱",
+      icon: FaWhatsapp,
       title: "WhatsApp",
-      value: "+598 XX XXX XXX",
-      href: "https://wa.me/598XXXXXXX",
+      value: "+598 95 327 760",
+      href: "https://wa.me/59895327760",
       description: "Chat directo",
       color: "from-green-500 to-emerald-500"
     }
@@ -49,16 +54,29 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      
-      // Reset status after 3 seconds
-      setTimeout(() => setSubmitStatus('idle'), 3000);
-    }, 2000);
+
+     try {
+        await emailjs.send(
+        'service_bdywpaq',
+        'template_rhih0xk', 
+        {
+            name: formData.name,
+            email: formData.email,
+            subject: formData.subject,
+            message: formData.message,
+        },
+        'hpRhcn2FwRmj0ADHP'
+        );
+        setSubmitStatus('success');
+        setFormData({name: '', email: '', subject: '', message: ''});
+    } catch (error) {
+        setSubmitStatus('error');
+    } finally {
+        setIsSubmitting(false);
+    }
+
+    //Resetear status después de 3 segundos
+    setTimeout(() => setSubmitStatus('idle'), 3000);
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -125,7 +143,8 @@ const Contact = () => {
                       
                       <div className="relative flex-shrink-0">
                         <div className={`w-12 h-12 bg-gradient-to-r ${method.color} rounded-xl flex items-center justify-center shadow-md group-hover/method:scale-110 transition-transform duration-300`}>
-                          <span className="text-white text-xl">{method.icon}</span>
+                          <method.icon className="w-6 h-6 text-white" />
+
                         </div>
                       </div>
                       
