@@ -33,7 +33,8 @@ const ProjectCard = ({ project, reversed = false }: ProjectCardProps) => {
                   alt={project.title}
                   className="w-full h-48 sm:h-56 lg:h-64 object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-               
+
+                
               </div>
               
               {/* Floating Decorative Elements */}
@@ -68,27 +69,55 @@ const ProjectCard = ({ project, reversed = false }: ProjectCardProps) => {
 
             {/* Technologies - Compact Grid */}
             <div className="space-y-3">
-              <h4 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-widest font-mono">
-                Stack
+              <h4 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-widest font-mono flex items-center gap-2">
+                <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+                Stack Tecnológico
               </h4>
               <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-2">
                 {project.technologies.slice(0, 6).map((tech, index) => (
                   <span
                     key={tech}
-                    className="group/tech relative px-3 py-2 text-xs font-medium text-center rounded-lg bg-gray-100/80 dark:bg-gray-800/80 text-gray-700 dark:text-gray-300 border border-gray-200/50 dark:border-gray-700/50 hover:border-blue-300/60 dark:hover:border-blue-600/60 transition-all duration-300 hover:shadow-md hover:shadow-blue-500/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 cursor-default"
+                    className="group/tech relative px-3 py-2 text-xs font-medium text-center rounded-lg bg-blue-100/80 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border border-blue-200/50 dark:border-blue-700/50 hover:border-blue-400/60 dark:hover:border-blue-500/60 transition-all duration-300 hover:shadow-md hover:shadow-blue-500/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 cursor-default"
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-indigo-500/5 dark:from-blue-400/10 dark:to-indigo-400/10 rounded-lg opacity-0 group-hover/tech:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-cyan-500/5 dark:from-blue-400/10 dark:to-cyan-400/10 rounded-lg opacity-0 group-hover/tech:opacity-100 transition-opacity duration-300"></div>
                     <span className="relative font-mono">{tech}</span>
                   </span>
                 ))}
                 {project.technologies.length > 6 && (
-                  <span className="px-3 py-2 text-xs font-medium text-center rounded-lg bg-blue-100/80 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 border border-blue-200/50 dark:border-blue-700/50">
+                  <span className="px-3 py-2 text-xs font-medium text-center rounded-lg bg-blue-200/80 dark:bg-blue-800/30 text-blue-800 dark:text-blue-300 border border-blue-300/50 dark:border-blue-600/50">
                     +{project.technologies.length - 6}
                   </span>
                 )}
               </div>
             </div>
+
+            {/* Concepts - Programming Patterns & Architecture */}
+            {project.concepts && project.concepts.length > 0 && (
+              <div className="space-y-3">
+                <h4 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-widest font-mono flex items-center gap-2">
+                  <span className="w-2 h-2 bg-purple-500 rounded-full"></span>
+                  Conceptos Aplicados
+                </h4>
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+                  {project.concepts.slice(0, 8).map((concept, index) => (
+                    <span
+                      key={concept}
+                      className="group/concept relative px-3 py-2 text-xs font-medium text-center rounded-lg bg-purple-100/80 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 border border-purple-200/50 dark:border-purple-700/50 hover:border-purple-400/60 dark:hover:border-purple-500/60 transition-all duration-300 hover:shadow-md hover:shadow-purple-500/10 dark:hover:shadow-purple-400/10 hover:-translate-y-1 cursor-default"
+                      style={{ animationDelay: `${(index + 6) * 100}ms` }}
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-indigo-500/5 dark:from-purple-400/10 dark:to-indigo-400/10 rounded-lg opacity-0 group-hover/concept:opacity-100 transition-opacity duration-300"></div>
+                      <span className="relative font-mono text-xs">{concept}</span>
+                    </span>
+                  ))}
+                  {project.concepts.length > 8 && (
+                    <span className="px-3 py-2 text-xs font-medium text-center rounded-lg bg-purple-200/80 dark:bg-purple-800/30 text-purple-800 dark:text-purple-300 border border-purple-300/50 dark:border-purple-600/50">
+                      +{project.concepts.length - 8}
+                    </span>
+                  )}
+                </div>
+              </div>
+            )}
 
             {/* Action Buttons - Sleeker Design */}
             <div className="flex flex-col sm:flex-row gap-3 pt-6">
@@ -107,7 +136,7 @@ const ProjectCard = ({ project, reversed = false }: ProjectCardProps) => {
               </a>
 
               {/* Demo Button */}
-              {project.demoUrl && <a
+              { project.demoUrl && <a
                 href={project.demoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -125,7 +154,7 @@ const ProjectCard = ({ project, reversed = false }: ProjectCardProps) => {
             </div>
 
             {/* Status Indicators */}
-            <div className="flex items-center gap-4 pt-2 text-xs text-gray-500 dark:text-gray-400 font-mono">
+            {project.demoUrl && <div className="flex items-center gap-4 pt-2 text-xs text-gray-500 dark:text-gray-400 font-mono">
               <div className="flex items-center gap-1">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                 <span>Activo</span>
@@ -136,9 +165,9 @@ const ProjectCard = ({ project, reversed = false }: ProjectCardProps) => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                 </svg>
-                <span>Demo disponible</span>
+               <span>Demo disponible</span>
               </div>
-            </div>
+            </div>}
           </div>
         </div>
       </div>

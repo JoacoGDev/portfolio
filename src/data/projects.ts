@@ -1,6 +1,7 @@
 import foto from "../assets/mockup 1.jpg"
 import foto2 from "../assets/681shots_so.webp"
 import foto3 from "../assets/32shots_so.webp"
+import foto4 from "../assets/screely-1758736662780.png"
 
 export type Project = {
     title: string;
@@ -19,15 +20,15 @@ export const projects: Project[] = [
         technologies: ["Node.js", "Express", "Socket.io", "Bootstrap", "JWT", "CSS"],
         githubUrl: "https://github.com/JoacoGDev/realtime-chat",
         demoUrl: "https://lavish-curiosity-production-f194.up.railway.app",
-        imageUrl: foto,
+        imageUrl: foto3,
     },    
      {
-        title: "Realtime Chat",
-        description: "A chat application that allows users to communicate in real-time using WebSockets.",
-        technologies: ["Node.Js", "Express", "JWT", "SQL", "Socket.io"],
+        title: "QrCode Generator",
+        description: "Una app web que genera códigos qr para tus links",
+        technologies: ["Node.Js", "Express", "QrCode"],
         githubUrl: "https://github.com/JoacoGDev/realtime-chat",
         demoUrl: "https://lavish-curiosity-production-f194.up.railway.app/chat.html",
-        imageUrl: foto3,
+        imageUrl: foto4,
     },
      {
         title: "Pollomorfismo",
