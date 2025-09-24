@@ -164,13 +164,6 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-
-            {/* Quick Response Badge */}
-            <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 dark:from-green-400/20 dark:to-emerald-400/20 backdrop-blur-sm rounded-2xl border border-green-200/50 dark:border-green-700/50 p-6 text-center">
-              <div className="text-3xl mb-3">⚡</div>
-              <div className="font-semibold font-mono text-green-700 dark:text-green-300 mb-2">Respuesta Rápida</div>
-              <div className="text-sm text-green-600 dark:text-green-400">Típicamente respondo en menos de 24 horas</div>
-            </div>
           </div>
 
           {/* Contact Form - Right Column */}
@@ -299,22 +292,7 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* Footer CTA */}
-        <div className="mt-20 text-center">
-          <div className="inline-flex items-center gap-4 px-6 py-4 bg-gradient-to-r from-blue-500/10 to-indigo-500/10 dark:from-blue-400/20 dark:to-indigo-400/20 backdrop-blur-sm rounded-2xl border border-blue-200/50 dark:border-blue-700/50">
-            <span className="text-2xl animate-bounce">💡</span>
-            <div className="text-left">
-              <div className="font-semibold font-mono text-blue-700 dark:text-blue-300">¿Prefieres una llamada?</div>
-              <div className="text-sm text-blue-600 dark:text-blue-400">Agenda una videollamada de 30 minutos gratuita</div>
-            </div>
-            <a
-              href="#"
-              className="ml-4 px-4 py-2 bg-blue-600 dark:bg-blue-500 text-white font-mono text-sm rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors duration-300"
-            >
-              Agendar
-            </a>
-          </div>
-        </div>
+        
       </div>
     </section>
   );
