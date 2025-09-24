@@ -107,7 +107,7 @@ const ProjectCard = ({ project, reversed = false }: ProjectCardProps) => {
               </a>
 
               {/* Demo Button */}
-              <a
+              {project.demoUrl && <a
                 href={project.demoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -121,7 +121,7 @@ const ProjectCard = ({ project, reversed = false }: ProjectCardProps) => {
                 
                 {/* Shine Effect */}
                 <div className="absolute inset-0 -top-[2px] -bottom-[2px] bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12 -translate-x-full group-hover/demo:translate-x-full transition-transform duration-1000 ease-out"></div>
-              </a>
+              </a>}
             </div>
 
             {/* Status Indicators */}
