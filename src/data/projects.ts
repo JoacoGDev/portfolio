@@ -1,7 +1,7 @@
-import foto from "../assets/mockup 1.jpg"
+
 import foto2 from "../assets/681shots_so.webp"
 import foto3 from "../assets/32shots_so.webp"
-import foto4 from "../assets/screely-1758736662780.png"
+import foto1 from "../assets/323shots_so.webp"
 
 export type Project = {
     title: string;
@@ -25,10 +25,10 @@ export const projects: Project[] = [
      {
         title: "QrCode Generator",
         description: "Una app web que genera códigos qr para tus links",
-        technologies: ["Node.Js", "Express", "QrCode"],
-        githubUrl: "https://github.com/JoacoGDev/realtime-chat",
-        demoUrl: "https://lavish-curiosity-production-f194.up.railway.app/chat.html",
-        imageUrl: foto4,
+        technologies: ["Node.Js", "Express", "QrCode", "Tailwind"],
+        githubUrl: "https://github.com/JoacoGDev/qr-code-generator.git",
+        demoUrl: "https://qr-code-generator-ejuj.onrender.com/",
+        imageUrl: foto1,
     },
      {
         title: "Pollomorfismo",

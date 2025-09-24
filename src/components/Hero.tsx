@@ -2,7 +2,6 @@ import Title from "./Title";
 import TextLine from "./TextLine";
 import Photo from "./Photo";
 import fotoJoaco from "../assets/fotoJoaco-removebg-preview.png"
-import cv from "../../public/Joaquin Gil Full-Stack cv.pdf"
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 
@@ -58,7 +57,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
             {/* Primary CTA */}
             <a
-              href={cv}
+              href="/Joaquin Gil Full-Stack cv.pdf"
               download
               target="_blank"
               rel="noopener noreferrer"
