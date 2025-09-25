@@ -26,7 +26,7 @@ export const projects: Project[] = [
        {
         title: "Portfolio Web",
         description: "Mi propia web donde mostrar mi experiencia y proyectos",
-        technologies: ["Node.Js", "React", "Vite", "Tailwind", "EmailJs", "SQL"],
+        technologies: ["Node.Js", "Typescript", "React", "Vite", "Tailwind", "EmailJs", "SQL"],
         githubUrl: "https://github.com/JoacoGDev/portfolio-frontend.git",
         imageUrl: portfolioImg,
     },
