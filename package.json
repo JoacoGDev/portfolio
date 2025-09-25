@@ -1,5 +1,5 @@
 {
-  "name": "portfolio-frontend",
+  "name": "portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,6 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
+    "homepage": "https://JoacoGDev.github.io/portfolio",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
