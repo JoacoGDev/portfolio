@@ -3,6 +3,7 @@ import TextLine from "./TextLine";
 import Photo from "./Photo";
 import fotoJoaco from "../assets/fotoJoaco-removebg-preview.webp"
 import { FaLinkedin, FaGithub } from "react-icons/fa";
+import cvFile from '../assets/cv.pdf';
 
 
 const Hero = () => {
@@ -57,10 +58,8 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
             {/* Primary CTA */}
             <a
-              href="/Joaquin Gil Full-Stack cv.pdf"
-              download
-              target="_blank"
-              rel="noopener noreferrer"
+              href={cvFile}
+              download="cv.pdf"
               className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 dark:from-blue-500 dark:to-indigo-500 dark:hover:from-blue-600 dark:hover:to-indigo-600 text-white font-semibold font-mono rounded-xl shadow-xl shadow-blue-500/25 dark:shadow-blue-400/25 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/30 dark:hover:shadow-blue-400/30"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
@@ -79,6 +78,7 @@ const Hero = () => {
                 />
               </svg>
             </a>
+
 
 
             {/* Secondary CTA */}
