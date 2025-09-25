@@ -1,38 +1,53 @@
 const About = () => {
-  const skills = [
-    { name: "React", color: "from-blue-500 to-cyan-500" },
-    { name: "TypeScript", color: "from-blue-600 to-indigo-600" },
-    { name: "Node.js", color: "from-green-500 to-emerald-500" },
-    { name: "PostgreSQL", color: "from-indigo-500 to-purple-500" },
-    { name: "Next.js", color: "from-gray-700 to-gray-900" },
-    { name: "Tailwind CSS", color: "from-cyan-500 to-teal-500" },
-    { name: "JavaScript", color: "from-yellow-500 to-orange-500" },
-    { name: "Python", color: "from-blue-600 to-blue-800" },
-    { name: "MongoDB", color: "from-green-600 to-green-800" },
-    { name: "Express", color: "from-gray-600 to-gray-800" },
-    { name: "Git", color: "from-orange-500 to-red-500" },
-    { name: "Docker", color: "from-blue-400 to-blue-600" },
-  ];
 
-  const stats = [
-    { number: "50+", label: "Proyectos", icon: "🚀" },
-    { number: "2+", label: "Años", icon: "⏱️" },
-    { number: "15+", label: "Tecnologías", icon: "⚡" },
-    { number: "∞", label: "Café", icon: "☕" },
-  ];
+
+
+const skills = [
+  { name: "Resolución de Problemas", color: "from-purple-500 to-indigo-500" },
+  { name: "Pensamiento Crítico & Diseño de Soluciones", color: "from-blue-500 to-cyan-500" },
+  { name: "Adaptabilidad Técnica", color: "from-green-500 to-emerald-500" },
+  { name: "Uso Estratégico de IA", color: "from-pink-500 to-rose-500" },
+  { name: "Comunicación en Inglés", color: "from-orange-500 to-red-500" },
+  { name: "Aprendizaje Continuo & Rápido", color: "from-teal-500 to-cyan-500" },
+  { name: "Colaboración & Trabajo en Equipo", color: "from-yellow-500 to-amber-500" },
+  { name: "Gestión del Cambio", color: "from-fuchsia-500 to-purple-500" },
+];
+
+
+  const techStack = {
+    frontend: ["React", "TypeScript", "CSS", "Bootstrap", "Tailwind CSS"],
+    backend: ["Node.js", "Python", "Express", "SQL Server", "SQLite", "Java", "Typescript", "JavaScript", "C#", ".Net", "Entity Framework", "Swing", "Ionic"],
+    tools: ["Git", "Swagger", "Postman"]
+  };
+
+// Stats más variados y representativos
+const stats = [
+  { number: "+2", label: "Años de Código", icon: "💻" },
+  { number: "∞", label: "Cafés", icon: "☕" },
+  { number: "∞", label: "Curiosidad", icon: "🧠" },
+  { number: "100%", label: "Dedicación", icon: "💪" },
+];
 
   const interests = [
     {
-      icon: "💻",
-      title: "Full-Stack Development",
-      desc: "Creando aplicaciones completas",
+      icon: "🔍",
+      title: "Análisis de Problemas",
+      desc: "Entender antes de resolver",
     },
-    { icon: "🎨", title: "UI/UX Design", desc: "Diseños que enamoran" },
-    { icon: "🤖", title: "IA & Machine Learning", desc: "El futuro es ahora" },
+    { 
+      icon: "🛠️", 
+      title: "Desarrollo Integral", 
+      desc: "De la idea al producto final" 
+    },
+    { 
+      icon: "🤖", 
+      title: "IA & Automatización", 
+      desc: "Potenciando el desarrollo" 
+    },
     {
       icon: "🌱",
-      title: "Aprendizaje Continuo",
-      desc: "Siempre evolucionando",
+      title: "Crecimiento Continuo",
+      desc: "Siempre aprendiendo",
     },
   ];
 
@@ -93,7 +108,7 @@ const About = () => {
                     , tengo 21 años y soy de Montevideo, Uruguay. Actualmente me
                     encuentro preparando el {""}
                     <span className="font-semibold">
-                       proyecto final de carrera
+                      proyecto final de carrera
                     </span>
                     , el cierre de un camino que comencé hace más de 2 años,
                     cuando descubrí la magia de transformar ideas en
@@ -140,126 +155,8 @@ const About = () => {
                 </div>
               ))}
             </div>
-          </div>
 
-          {/* Right Column - Skills & Interests */}
-          <div className="space-y-8">
-            {/* Skills Section */}
-            <div className="group relative bg-white/60 dark:bg-gray-900/60 backdrop-blur-xl rounded-3xl border border-white/40 dark:border-gray-700/40 shadow-xl shadow-gray-900/5 dark:shadow-black/10 p-8 transition-all duration-700 hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-blue-400/10">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-indigo-500/5 dark:from-blue-400/10 dark:via-transparent dark:to-indigo-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl"></div>
-
-              <div className="relative">
-                <div className="flex items-center gap-4 mb-8">
-                  <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 dark:from-indigo-400 dark:to-purple-500 rounded-2xl flex items-center justify-center shadow-lg">
-                    <span className="text-white text-2xl">⚡</span>
-                  </div>
-                  <h3 className="text-2xl font-bold font-mono text-gray-900 dark:text-white">
-                    Skills
-                  </h3>
-                </div>
-
-                <div className="space-y-6">
-                  <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-widest font-mono">
-                    Stack Tecnológico
-                  </h4>
-
-                  <div className="flex flex-wrap gap-3">
-                    {skills.map((skill, index) => (
-                      <span
-                        key={skill.name}
-                        className={`group/skill relative px-4 py-3 text-sm font-mono font-medium rounded-xl shadow-lg bg-gradient-to-r ${skill.color} text-white hover:scale-105 hover:shadow-xl transition-all duration-300 cursor-default overflow-hidden`}
-                        style={{ animationDelay: `${index * 100}ms` }}
-                      >
-                        {/* Shine effect */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12 -translate-x-full group-hover/skill:translate-x-full transition-transform duration-700 ease-out"></div>
-
-                        {/* Content */}
-                        <span className="relative z-10">{skill.name}</span>
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Additional tech categories */}
-                  <div className="grid sm:grid-cols-2 gap-6 mt-8">
-                    <div className="space-y-3">
-                      <h5 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider font-mono flex items-center gap-2">
-                        <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
-                        Frontend
-                      </h5>
-                      <div className="flex flex-wrap gap-2">
-                        {["HTML5", "CSS3", "SASS", "Responsive Design"].map(
-                          (tech) => (
-                            <span
-                              key={tech}
-                              className="px-3 py-1.5 text-xs font-mono bg-blue-100/80 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-lg border border-blue-200/50 dark:border-blue-700/50"
-                            >
-                              {tech}
-                            </span>
-                          )
-                        )}
-                      </div>
-                    </div>
-
-                    <div className="space-y-3">
-                      <h5 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider font-mono flex items-center gap-2">
-                        <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                        Backend
-                      </h5>
-                      <div className="flex flex-wrap gap-2">
-                        {["REST APIs", "GraphQL", "JWT", "OAuth"].map(
-                          (tech) => (
-                            <span
-                              key={tech}
-                              className="px-3 py-1.5 text-xs font-mono bg-green-100/80 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-lg border border-green-200/50 dark:border-green-700/50"
-                            >
-                              {tech}
-                            </span>
-                          )
-                        )}
-                      </div>
-                    </div>
-
-                    <div className="space-y-3">
-                      <h5 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider font-mono flex items-center gap-2">
-                        <span className="w-2 h-2 bg-purple-500 rounded-full"></span>
-                        Base de Datos
-                      </h5>
-                      <div className="flex flex-wrap gap-2">
-                        {["SQL", "NoSQL", "Redis", "Prisma"].map((tech) => (
-                          <span
-                            key={tech}
-                            className="px-3 py-1.5 text-xs font-mono bg-purple-100/80 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-lg border border-purple-200/50 dark:border-purple-700/50"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="space-y-3">
-                      <h5 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider font-mono flex items-center gap-2">
-                        <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
-                        DevOps & Tools
-                      </h5>
-                      <div className="flex flex-wrap gap-2">
-                        {["AWS", "Vercel", "GitHub Actions", "Postman"].map(
-                          (tech) => (
-                            <span
-                              key={tech}
-                              className="px-3 py-1.5 text-xs font-mono bg-orange-100/80 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 rounded-lg border border-orange-200/50 dark:border-orange-700/50"
-                            >
-                              {tech}
-                            </span>
-                          )
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Interests Grid */}
+             {/* Interests Grid */}
             <div className="grid sm:grid-cols-2 gap-4">
               {interests.map((interest, index) => (
                 <div
@@ -281,6 +178,89 @@ const About = () => {
                 </div>
               ))}
             </div>
+          </div>
+
+          {/* Right Column - Skills */}
+          <div className="space-y-8">
+            {/* Skills Section */}
+            <div className="group relative bg-white/60 dark:bg-gray-900/60 backdrop-blur-xl rounded-3xl border border-white/40 dark:border-gray-700/40 shadow-xl shadow-gray-900/5 dark:shadow-black/10 p-8 transition-all duration-700 hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-blue-400/10">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-indigo-500/5 dark:from-blue-400/10 dark:via-transparent dark:to-indigo-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl"></div>
+
+              <div className="relative">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 dark:from-indigo-400 dark:to-purple-500 rounded-2xl flex items-center justify-center shadow-lg">
+                    <span className="text-white text-2xl">⚡</span>
+                  </div>
+                  <h3 className="text-2xl font-bold font-mono text-gray-900 dark:text-white">
+                    Habilidades Clave
+                  </h3>
+                </div>
+
+                <div className="space-y-8">
+                  {/* Core Skills */}
+                  <div>
+                    <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-widest font-mono mb-6">
+                      Capacidades Principales
+                    </h4>
+
+                    <div className="flex flex-wrap gap-3">
+                      {skills.map((skill, index) => (
+                        <span
+                          key={skill.name}
+                          className={`group/skill relative px-5 py-3 text-sm font-mono font-medium rounded-xl shadow-lg bg-gradient-to-r ${skill.color} text-white hover:scale-105 hover:shadow-xl transition-all duration-300 cursor-default overflow-hidden`}
+                          style={{ animationDelay: `${index * 100}ms` }}
+                        >
+                          {/* Shine effect */}
+                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12 -translate-x-full group-hover/skill:translate-x-full transition-transform duration-700 ease-out"></div>
+
+                          {/* Content */}
+                          <span className="relative z-10">{skill.name}</span>
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Tech Familiarity */}
+                  <div className="bg-gray-50/50 dark:bg-gray-800/30 rounded-2xl p-6 border border-gray-200/30 dark:border-gray-700/30">
+                    <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-widest font-mono mb-4 flex items-center gap-2">
+                      <span className="w-2 h-2 bg-indigo-500 rounded-full"></span>
+                      Stack Tecnológico Familiar
+                    </h4>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 font-mono mb-4 italic">
+                      "Herramientas con las que he trabajado."
+                    </p>
+
+                    <div className="flex flex-wrap gap-2">
+                      {[...techStack.frontend, ...techStack.backend, ...techStack.tools].map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-3 py-2 text-xs font-mono bg-gray-100/80 dark:bg-gray-700/50 text-gray-700 dark:text-gray-300 rounded-lg border border-gray-200/50 dark:border-gray-600/50 hover:bg-indigo-100/80 dark:hover:bg-indigo-900/30 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors duration-200"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Philosophy */}
+                  <div className="bg-gradient-to-r from-indigo-50/50 via-purple-50/50 to-pink-50/50 dark:from-indigo-900/20 dark:via-purple-900/20 dark:to-pink-900/20 rounded-2xl p-6 border border-indigo-200/30 dark:border-indigo-700/30">
+                    <div className="flex items-start gap-3">
+                      <span className="text-2xl">🎯</span>
+                      <div>
+                        <h5 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">Mi Enfoque</h5>
+                        <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                          Me adapto rápidamente a nuevas herramientas y tecnologías según las necesidades del proyecto.
+                          Mi fortaleza está en analizar problemas, diseñar soluciones efectivas y usar la tecnología
+                          más adecuada para cada desafío.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+           
           </div>
         </div>
 

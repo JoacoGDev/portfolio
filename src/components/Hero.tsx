@@ -1,7 +1,7 @@
 import Title from "./Title";
 import TextLine from "./TextLine";
 import Photo from "./Photo";
-import fotoJoaco from "../assets/fotoJoaco-removebg-preview.png"
+import fotoJoaco from "../assets/fotoJoaco-removebg-preview.webp"
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 
