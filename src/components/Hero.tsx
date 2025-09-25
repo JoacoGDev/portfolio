@@ -107,8 +107,8 @@ const Hero = () => {
             <div className="text-sm font-medium text-gray-500 dark:text-gray-400 font-mono">Sígueme:</div>
             <div className="flex gap-4">
               {[
-                { icon: FaGithub, label: "GitHub", href: "https://www.linkedin.com/in/joaquingilp/" },
-                { icon: FaLinkedin, label: "LinkedIn", href: "https://github.com/JoacoGDev" },
+                { icon: FaGithub, label: "GitHub", href: "https://github.com/JoacoGDev" },
+                { icon: FaLinkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/joaquingilp/" },
               ].map((social, index) => {
                 const Icon = social.icon; // instanciamos el componente
                 return (
