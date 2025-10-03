@@ -1,44 +1,34 @@
-import { createContext, useContext, useEffect, useState } from "react";
-import type { ReactNode } from "react";
-
-type Theme = "light" | "dark" | "system";
-
-interface ThemeContextType {
-  theme: Theme;
-  setTheme: (theme: Theme) => void;
-}
+import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
+import type { Theme, ThemeContextType } from "../types/index.ts"
 
 const ThemeContext = createContext<ThemeContextType>({
   theme: "system",
-  setTheme: () => {},
+  setTheme: () => undefined,
 });
 
-export const ThemeProvider = ({ children }: { children: ReactNode }) => {
+export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setThemeState] = useState<Theme>("system");
 
-  // Cambia el tema en html y localStorage
   const setTheme = (newTheme: Theme) => {
     setThemeState(newTheme);
+    const isDark =
+      newTheme === "dark" ||
+      (newTheme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches);
 
-    if (newTheme === "dark") {
-      document.documentElement.classList.add("dark");
-      localStorage.theme = "dark";
-    } else if (newTheme === "light") {
-      document.documentElement.classList.remove("dark");
-      localStorage.theme = "light";
-    } else {
-      document.documentElement.classList.toggle(
-        "dark",
-        window.matchMedia("(prefers-color-scheme: dark)").matches
-      );
+    document.documentElement.classList.toggle("dark", isDark);
+
+    if (newTheme === "system") {
       localStorage.removeItem("theme");
+    } else {
+      localStorage.theme = newTheme;
     }
   };
 
-  // Al cargar la app, lee el tema
   useEffect(() => {
-    const savedTheme = (localStorage.getItem("theme") as Theme) || "system";
-    setTheme(savedTheme);
+    const savedTheme = localStorage.getItem("theme") as Theme | null;
+    if (savedTheme) {
+      setTheme(savedTheme);
+    }
   }, []);
 
   return (
@@ -46,6 +36,12 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
       {children}
     </ThemeContext.Provider>
   );
-};
+}
 
-export const useTheme = () => useContext(ThemeContext);
+export const useTheme = () => {
+  const context = useContext(ThemeContext);
+  if (!context) {
+    throw new Error("useTheme must be used within ThemeProvider");
+  }
+  return context;
+};

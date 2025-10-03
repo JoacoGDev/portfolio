@@ -1,3 +1,5 @@
+import { cn } from '../utils/cn';
+
 interface PhotoProps {
   img: string;
   className?: string;
@@ -9,10 +11,13 @@ const Photo = ({ img, className }: PhotoProps) => {
       <img
         src={img}
         alt="Avatar de Joaquín Gil - Desarrollador Full-Stack"
-        className={`
-          object-cover transition-all duration-500 hover:scale-105
-          ${className || "w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-3xl shadow-xl shadow-gray-900/20 dark:shadow-black/40 border-2 border-white/50 dark:border-gray-800/50"}
-        `}
+        className={cn(
+          'object-cover transition-all duration-500 hover:scale-105',
+          'w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-3xl',
+          'shadow-xl shadow-gray-900/20 dark:shadow-black/40',
+          'border-2 border-white/50 dark:border-gray-800/50',
+          className
+        )}
         loading="lazy"
       />
       

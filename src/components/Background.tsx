@@ -1,6 +1,10 @@
+import { cn } from "../utils/cn";
+
 const Background = () => {
   return (
-    <div className="fixed inset-0 -z-20 w-full h-full overflow-hidden">
+    <div className={cn(
+      "fixed inset-0 -z-20 w-full h-full overflow-hidden"
+    )}>
       {/* Light Mode Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-100 via-indigo-50 to-purple-100 dark:hidden">
         {/* Base atmospheric layer */}

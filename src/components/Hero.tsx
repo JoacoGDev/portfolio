@@ -1,10 +1,12 @@
 import Title from "./Title";
 import TextLine from "./TextLine";
 import Photo from "./Photo";
-import fotoJoaco from "../assets/fotoJoaco-removebg-preview.webp"
+import fotoJoaco from "../assets/fotoJoaco-removebg-preview.webp";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
-import cvFile from '../assets/cv.pdf';
-
+import cvEs from "../assets/Joaquín_Gil_Full_Stack_Esp.pdf";
+import cvEn from "../assets/Joaquin_Gil_Full_Stack_Eng.pdf";
+import { Button } from "./Button";
+import { cn } from "../utils/cn";
 
 const Hero = () => {
   return (
@@ -18,16 +20,13 @@ const Hero = () => {
 
       {/* Content Container */}
       <div className="flex flex-col-reverse lg:flex-row items-center justify-center max-w-7xl mx-auto w-full gap-12 lg:gap-20">
-
         {/* Text Content - Left Side */}
         <div className="flex flex-col items-center lg:items-start text-center lg:text-left max-w-2xl space-y-8 relative">
-
           {/* Status Badge */}
           <div className="mt-4 inline-flex items-center px-4 py-2 rounded-full bg-green-100/80 dark:bg-green-900/30 backdrop-blur-sm text-green-700 dark:text-green-300 text-sm font-medium border border-green-200/50 dark:border-green-700/50">
             <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
             Disponible para trabajar
           </div>
-
 
           {/* Title */}
           <div className="space-y-4">
@@ -53,37 +52,75 @@ const Hero = () => {
             className="text-lg sm:text-xl lg:text-2xl leading-relaxed text-gray-600 dark:text-gray-400 max-w-2xl"
           />
 
-
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            {/* Primary CTA */}
-            <a
-              href={cvFile}
-              download="cv.pdf"
-              className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 dark:from-blue-500 dark:to-indigo-500 dark:hover:from-blue-600 dark:hover:to-indigo-600 text-white font-semibold font-mono rounded-xl shadow-xl shadow-blue-500/25 dark:shadow-blue-400/25 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/30 dark:hover:shadow-blue-400/30"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
-              <span className="relative">Descargar CV</span>
-              <svg
-                className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+            <div className="flex flex-col sm:flex-row gap-3">
+              {/* Spanish CV */}
+              <Button
+                as="a"
+                href={cvEs}
+                download="Joaquín_Gil_Full_Stack_Esp.pdf"
+                variant="primary"
+                size="lg"
+                className={cn(
+                  "group inline-flex items-center gap-3",
+                  "sm:mr-2"
+                )}
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                />
-              </svg>
-            </a>
+                <span className="flex items-center gap-2">
+                  <span>CV</span>
+                  <span className="text-xs opacity-80">(ES)</span>
+                </span>
+                <svg
+                  className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  />
+                </svg>
+              </Button>
 
+              {/* English CV */}
+              <Button
+                as="a"
+                href={cvEn}
+                download="Joaquin_Gil_Full_Stack_Eng.pdf"
+                variant="primary"
+                size="lg"
+                className={cn(
+                  "group inline-flex items-center gap-3",
+                  "bg-gradient-to-r from-indigo-600 to-violet-600"
+                )}
+              >
+                <span className="flex items-center gap-2">
+                  <span>CV</span>
+                  <span className="text-xs opacity-80">(EN)</span>
+                </span>
+                <svg
+                  className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  />
+                </svg>
+              </Button>
+            </div>
 
-
-            {/* Secondary CTA */}
-            <a
-              href="#projects"
+            <Button
+              variant="secondary"
+              size="lg"
               onClick={(e) => {
                 e.preventDefault();
                 const target = document.getElementById('projects');
@@ -94,12 +131,11 @@ const Hero = () => {
                   });
                 }
               }}
-              className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm text-gray-700 dark:text-gray-300 font-semibold font-mono rounded-xl border-2 border-white/40 dark:border-gray-700/40 hover:border-blue-300/60 dark:hover:border-blue-600/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-gray-500/10 dark:hover:shadow-black/20"
+              className="group inline-flex items-center gap-3"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-indigo-500/5 dark:from-blue-400/10 dark:to-indigo-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
-              <span className="relative text-lg">👀</span>
-              <span className="relative">Ver Proyectos</span>
-            </a>
+              <span className="text-lg">👀</span>
+              <span>Ver Proyectos</span>
+            </Button>
           </div>
 
           {/* Social Links */}
@@ -123,7 +159,6 @@ const Hero = () => {
                   </a>
                 );
               })}
-
             </div>
           </div>
         </div>
@@ -148,8 +183,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-
-
     </section>
   );
 };

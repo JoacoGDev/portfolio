@@ -1,6 +1,7 @@
 import emailjs from '@emailjs/browser';
-import { FaLinkedin, FaGithub, FaWhatsapp, FaEnvelope } from "react-icons/fa";
-
+import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
+import { Button } from "./Button";
+import { cn } from "../utils/cn";
 
 import { useState } from 'react';
 
@@ -40,14 +41,6 @@ const Contact = () => {
       href: "https://github.com/JoacoGDev",
       description: "Ve mi código",
       color: "from-gray-700 to-gray-900 dark:from-gray-400 dark:to-gray-200"
-    },
-    {
-      icon: FaWhatsapp,
-      title: "WhatsApp",
-      value: "+598 95 327 760",
-      href: "https://wa.me/59895327760",
-      description: "Chat directo",
-      color: "from-green-500 to-emerald-500"
     }
   ];
 
@@ -248,13 +241,16 @@ const Contact = () => {
 
                   {/* Submit Button */}
                   <div className="pt-4">
-                    <button
+                    <Button
                       type="submit"
+                      variant="primary"
+                      size="lg"
                       disabled={isSubmitting}
-                      className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 dark:from-blue-500 dark:to-indigo-500 dark:hover:from-blue-600 dark:hover:to-indigo-600 text-white font-semibold font-mono rounded-xl shadow-xl shadow-blue-500/25 dark:shadow-blue-400/25 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/30 dark:hover:shadow-blue-400/30 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+                      className={cn(
+                        "group w-full sm:w-auto inline-flex items-center justify-center gap-3",
+                        isSubmitting && "opacity-50 cursor-not-allowed"
+                      )}
                     >
-                      <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
-
                       {isSubmitting ? (
                         <>
                           <div className="relative w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
@@ -266,7 +262,8 @@ const Contact = () => {
                           <span className="relative">¡Enviado!</span>
                         </>
                       ) : (
-                        <>                          <span className="relative">Enviar Mensaje</span>
+                        <>
+                          <span className="relative">Enviar Mensaje</span>
                           <div className="relative w-5 h-5">
                             <svg
                               className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
@@ -284,7 +281,7 @@ const Contact = () => {
                           </div>
                         </>
                       )}
-                    </button>
+                    </Button>
                   </div>
 
                   {/* Success Message */}

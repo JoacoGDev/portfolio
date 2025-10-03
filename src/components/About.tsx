@@ -1,3 +1,4 @@
+import { Button } from "./Button";
 const About = () => {
 
 
@@ -267,8 +268,9 @@ const stats = [
         {/* Call to Action */}
         <div className="mt-20 text-center">
           <div className="inline-flex flex-col sm:flex-row gap-4">
-            <a
-              href="#projects"
+            <Button
+              variant="primary"
+              size="lg"
               onClick={(e) => {
                 e.preventDefault();
                 const target = document.getElementById("projects");
@@ -279,15 +281,15 @@ const stats = [
                   });
                 }
               }}
-              className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 dark:from-blue-500 dark:to-indigo-500 dark:hover:from-blue-600 dark:hover:to-indigo-600 text-white font-semibold font-mono rounded-xl shadow-xl shadow-blue-500/25 dark:shadow-blue-400/25 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/30 dark:hover:shadow-blue-400/30"
+              className="group inline-flex items-center gap-3"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
-              <span className="relative text-lg">👀</span>
-              <span className="relative">Ver Mis Proyectos</span>
-            </a>
+              <span className="text-lg">👀</span>
+              <span>Ver Mis Proyectos</span>
+            </Button>
 
-            <a
-              href="#contact"
+            <Button
+              variant="secondary"
+              size="lg"
               onClick={(e) => {
                 e.preventDefault();
                 const target = document.getElementById("contact");
@@ -298,12 +300,11 @@ const stats = [
                   });
                 }
               }}
-              className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm text-gray-700 dark:text-gray-300 font-semibold font-mono rounded-xl border-2 border-white/40 dark:border-gray-700/40 hover:border-blue-300/60 dark:hover:border-blue-600/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-gray-500/10 dark:hover:shadow-black/20"
+              className="group inline-flex items-center gap-3"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-indigo-500/5 dark:from-blue-400/10 dark:to-indigo-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
-              <span className="relative text-lg">💬</span>
-              <span className="relative">Hablemos</span>
-            </a>
+              <span className="text-lg">💬</span>
+              <span>Hablemos</span>
+            </Button>
           </div>
         </div>
       </div>

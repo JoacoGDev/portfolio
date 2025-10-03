@@ -1,3 +1,5 @@
+import { cn } from '../utils/cn';
+
 interface TextLineProps {
   text: string;
   className?: string;
@@ -6,9 +8,11 @@ interface TextLineProps {
 const TextLine = ({ text, className }: TextLineProps) => {
   return (
     <p
-      className={`font-light leading-relaxed ${
-        className || "text-lg sm:text-xl lg:text-2xl text-gray-600 dark:text-gray-400 max-w-2xl"
-      }`}
+      className={cn(
+        'font-light leading-relaxed',
+        'text-lg sm:text-xl lg:text-2xl text-gray-600 dark:text-gray-400 max-w-2xl',
+        className
+      )}
     >
       {text}
     </p>

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import ThemeToggle from "./ToggleTheme";
+import { cn } from "../utils/cn";
 
 const navLinks = [
   { name: "Home", id: "hero" },
@@ -51,12 +52,14 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 w-full z-50 flex justify-center pointer-events-none px-4 pt-4">
+    <nav className={cn(
+      "fixed top-0 w-full z-50 flex justify-center pointer-events-none px-4 pt-4"
+    )}>
       {/* Navbar Container */}
-      <div className={`
-        relative max-w-4xl w-full transition-all duration-500 ease-out pointer-events-auto
-        ${isScrolled ? 'scale-95' : 'scale-100'}
-      `}>
+      <div className={cn(
+        "relative max-w-4xl w-full transition-all duration-500 ease-out pointer-events-auto",
+        isScrolled ? 'scale-95' : 'scale-100'
+      )}>
         {/* Background with Glassmorphism */}
         <div className="absolute inset-0 bg-white/70 dark:bg-gray-900/70 backdrop-blur-xl rounded-2xl border border-white/40 dark:border-gray-700/40 shadow-xl shadow-gray-900/5 dark:shadow-black/10"></div>
         

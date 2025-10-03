@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useTheme } from "../context/ThemeContext";
 import { Sun, Moon, Monitor } from "lucide-react";
+import { cn } from "../utils/cn";
 
 const ThemeToggle = () => {
   const { theme, setTheme } = useTheme();
@@ -87,7 +88,15 @@ const ThemeToggle = () => {
       <button
         ref={buttonRef}
         onClick={handleToggle}
-        className="group relative flex items-center justify-center w-10 h-10 bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-xl border border-white/40 dark:border-gray-700/40 hover:border-blue-300/60 dark:hover:border-blue-600/60 text-gray-700 dark:text-gray-300 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-gray-500/10 dark:hover:shadow-black/20 focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-blue-400/20"
+        className={cn(
+          "group relative flex items-center justify-center",
+          "w-10 h-10 bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-xl",
+          "border border-white/40 dark:border-gray-700/40",
+          "hover:border-blue-300/60 dark:hover:border-blue-600/60",
+          "text-gray-700 dark:text-gray-300 transition-all duration-300",
+          "hover:scale-105 hover:shadow-lg hover:shadow-gray-500/10 dark:hover:shadow-black/20",
+          "focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-blue-400/20"
+        )}
         aria-label="Cambiar tema"
         aria-expanded={open}
       >
