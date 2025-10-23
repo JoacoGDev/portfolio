@@ -133,7 +133,6 @@ const Hero = () => {
               }}
               className="group inline-flex items-center gap-3"
             >
-              <span className="text-lg">👀</span>
               <span>Ver Proyectos</span>
             </Button>
           </div>
